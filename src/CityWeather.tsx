@@ -1,6 +1,6 @@
 import React, {ChangeEvent, useEffect} from 'react';
-import logo from './logo.svg';
-// import './App.scss';
+import logo from 'logo.svg';
+import "CityWeather.scss";
 import {useCityGeolocation} from "examples/hooks/useCityGeolocation";
 import {useCityWeatherData} from 'examples/hooks/useCityWeatherData';
 import {useCityWeatherIcon} from 'examples/hooks/useCityWeatherIcon';

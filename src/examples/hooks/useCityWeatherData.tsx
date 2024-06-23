@@ -1,6 +1,6 @@
 import {Dispatch, SetStateAction, useEffect, useState} from "react";
-import {WEATHER_ICON} from "./useCityWeatherIcon";
-import {useActive} from "./useActive";
+import {WEATHER_ICON} from "examples/hooks/useCityWeatherIcon";
+import {useActive} from "examples/hooks/useActive";
 
 
 interface IUseCityWeatherDataResponse {
@@ -66,7 +66,6 @@ interface ICityWeatherData {
 
 export function useCityWeatherData(): IUseCityWeatherDataResponse {
     const controller = new AbortController();
-
     // https://api.openweathermap.org/data/2.5/weather
     // ?appid={{owm_appid}}
     // &lat=44.9129069
@@ -74,7 +73,7 @@ export function useCityWeatherData(): IUseCityWeatherDataResponse {
     // &lang=en
     // &units=metric
     const URL_API = "https://api.openweathermap.org";
-    const KEY_API = "8933d1a13d4ddd84b640f7ac50064db2";
+    const MY_API_KEY = process.env.REACT_APP_MY_API_KEY || "123123123";
     const URL_API_SERVICE = "data/2.5/weather";
 
     const {isActive, setActiveValue, resetActiveValue} = useActive(false);
@@ -108,7 +107,7 @@ export function useCityWeatherData(): IUseCityWeatherDataResponse {
             lang: lang || langDefault,
             lat: String(lat),
             lon: String(lon),
-            appid: KEY_API,
+            appid: MY_API_KEY,
         });
         const queryParams = Object.entries(filters);
         const url = new URL(`${URL_API}/${URL_API_SERVICE}`);

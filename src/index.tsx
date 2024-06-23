@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.scss';
-import CityWeather from './CityWeather';
-import reportWebVitals from './reportWebVitals';
+import 'index.scss';
+import CityWeather from 'CityWeather';
+import reportWebVitals from 'reportWebVitals';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

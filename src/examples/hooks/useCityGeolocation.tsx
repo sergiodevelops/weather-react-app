@@ -1,5 +1,5 @@
 import {Dispatch, SetStateAction, useEffect, useState} from "react";
-import {useActive} from "./useActive";
+import {useActive} from "examples/hooks/useActive";
 
 
 interface ICityGeolocation {
@@ -30,7 +30,7 @@ export function useCityGeolocation(): IUseCityGeolocationResponse {
     // &limit=1
     // &appid={{owm_appid}}
     const URL_API = "https://api.openweathermap.org";
-    const KEY_API = "8933d1a13d4ddd84b640f7ac50064db2";
+    const MY_API_KEY = process.env.REACT_APP_MY_API_KEY || "123123123";
     const URL_API_SERVICE = "geo/1.0/direct";
 
 
@@ -57,7 +57,7 @@ export function useCityGeolocation(): IUseCityGeolocationResponse {
         const filters = {
             ...props.filters,
             limit: props.filters.limit || limitDefault,
-            appid: KEY_API,
+            appid: MY_API_KEY,
         }
         const queryParams = Object.entries(filters);
         const url = new URL(`${URL_API}/${URL_API_SERVICE}`);

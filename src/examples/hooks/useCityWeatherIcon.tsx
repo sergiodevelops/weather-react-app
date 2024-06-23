@@ -1,5 +1,5 @@
 import {Dispatch, SetStateAction, useEffect, useState} from "react";
-import {useActive} from "./useActive";
+import {useActive} from "examples/hooks/useActive";
 
 
 export enum WEATHER_ICON {

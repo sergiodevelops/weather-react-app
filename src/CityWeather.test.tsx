@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import CityWeather from './CityWeather';
+import CityWeather from 'CityWeather';
 
 test('renders learn react link', () => {
   render(<CityWeather />);
